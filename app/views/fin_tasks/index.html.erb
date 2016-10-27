@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fin Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fin day</th>
+      <th>Task</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fin_tasks.each do |fin_task| %>
+      <tr>
+        <td><%= fin_task.fin_day %></td>
+        <td><%= fin_task.task_id %></td>
+        <td><%= link_to 'Show', fin_task %></td>
+        <td><%= link_to 'Edit', edit_fin_task_path(fin_task) %></td>
+        <td><%= link_to 'Destroy', fin_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fin task', new_fin_task_path %>

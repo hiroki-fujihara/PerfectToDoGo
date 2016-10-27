@@ -1,0 +1,25 @@
+<%= form_for(@fin_task) do |f| %>
+  <% if @fin_task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fin_task.errors.count, "error") %> prohibited this fin_task from being saved:</h2>
+
+      <ul>
+      <% @fin_task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fin_day %><br>
+    <%= f.date_select :fin_day %>
+  </div>
+  <div class="field">
+    <%= f.label :task_id %><br>
+    <%= f.text_field :task_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

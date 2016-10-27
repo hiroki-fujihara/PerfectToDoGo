@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  content: MyString
+  day: 2016-10-27
+  important: 1
+  s_date: MyString
+  file: MyString
+
+two:
+  name: MyString
+  content: MyString
+  day: 2016-10-27
+  important: 1
+  s_date: MyString
+  file: MyString

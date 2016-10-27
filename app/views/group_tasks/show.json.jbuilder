@@ -1,0 +1,1 @@
+json.partial! "group_tasks/group_task", group_task: @group_task

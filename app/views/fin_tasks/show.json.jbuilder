@@ -1,0 +1,1 @@
+json.partial! "fin_tasks/fin_task", fin_task: @fin_task

@@ -1,0 +1,1 @@
+json.array! @group_tasks, partial: 'group_tasks/group_task', as: :group_task

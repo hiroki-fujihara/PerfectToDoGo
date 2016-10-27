@@ -1,0 +1,1 @@
+json.array! @chatlogs, partial: 'chatlogs/chatlog', as: :chatlog
