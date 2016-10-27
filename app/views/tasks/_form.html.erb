@@ -12,29 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+<br>
+<br>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.label :content %>
+    <%= f.text_field :name, :size=>"60" %>
   </div>
+<br>
+<br>
   <div class="field">
-    <%= f.label :day %><br>
+    <%= f.label :day %>
     <%= f.date_select :day %>
   </div>
+<br>
+<br>
   <div class="field">
-    <%= f.label :important %><br>
+    <%= f.label :important %>
     <%= f.number_field :important %>
   </div>
+<br>
+<br>
   <div class="field">
-    <%= f.label :s_date %><br>
+    <%= f.label :s_date %>
     <%= f.text_field :s_date %>
   </div>
+<br>
+<br>
   <div class="field">
-    <%= f.label :file %><br>
+    <%= f.label :file %>
     <%= f.text_field :file %>
   </div>
+<br>
+<br>
   <div class="actions">
     <%= f.submit %>
   </div>
