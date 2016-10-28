@@ -67,6 +67,12 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
     end
 
+   def search
+   @search_value = params["search"]["taskname"]
+   @taskss = Task.where("taskname LIKE '%#{@search_value}%'")
+   render :index
+  end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:name, :content, :day, :important, :s_date, :file)

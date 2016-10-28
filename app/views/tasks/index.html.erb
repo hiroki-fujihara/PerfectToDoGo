@@ -1,37 +1,99 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
 
-<table>
+<%= image_tag "ph.png" %> <font size="8"><font color ="blue">PerfectToDoGo!!</font></font>
+<%= form_tag({:action=>"search"}) do %>    
+  <%= text_field_tag "search[taskname]",@search_value %>  
+   <%= submit_tag "検索" %> 
+   <%= link_to "リセット", tasks_path %>  
+<%= link_to "グループ作成", group_tasks_path %>
+<%= link_to "ログアウト", tasks_path %>
+<% end %>
+
+<h1>今日の予定</h1>                   
+
+<table border="5" align="left">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Content</th>
-      <th>Day</th>
-      <th>Important</th>
-      <th>S date</th>
-      <th>File</th>
+      <th>予定名</th>
+      <th>詳細内容</th>
+      <th>予定日</th>
+      <th>重要度</th>
+      <th>指定日</th>
+      <th>添付ファイル</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
+
+
   <tbody>
     <% @tasks.each do |task| %>
-      <tr>
+<tr>
+
+ <td>
+<% if (task.day) - (Date.today) <= 0 %>
+<font color="red"><%= task.s_date %></font>
+<% else %>
+<font color="black"><%= task.s_date %></font>
+<% end %>
+</td>
+   
         <td><%= task.name %></td>
         <td><%= task.content %></td>
         <td><%= task.day %></td>
         <td><%= task.important %></td>
         <td><%= task.s_date %></td>
         <td><%= task.file %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', task %></td>
+        <td><%= link_to '更新', edit_task_path(task) %></td>
+        <td><%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= link_to 'タスクの完了', fin_tasks_path %>
+<%= link_to '作る', new_task_path %>
 
-<%= link_to 'New Task', new_task_path %>
+
+<h1></h1>
+<br>
+<br>
+<br>
+<table border="5" align="left">
+<h1>明日の予定</h1>
+  <thead>
+    <tr>
+      <th>予定名</th>
+      <th>詳細内容</th>
+      <th>予定日</th>
+      <th>重要度</th>
+      <th>指定日</th>
+      <th>添付ファイル</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+
+  <tbody>
+    <% @tasks.each do |task| %>
+<tr>
+   
+        <td><%= task.name %></td>
+        <td><%= task.content %></td>
+        <td><%= task.day %></td>
+        <td><%= task.important %></td>
+        <td><%= task.s_date %></td>
+        <td><%= task.file %></td>
+        <td><%= link_to '詳細', task %></td>
+        <td><%= link_to '更新', edit_task_path(task) %></td>
+        <td><%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
