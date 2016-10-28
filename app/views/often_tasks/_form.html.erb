@@ -1,4 +1,4 @@
-<%= form_for(@often_task) do |f| %>
+﻿<%= form_for(@often_task) do |f| %>
   <% if @often_task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@often_task.errors.count, "error") %> prohibited this often_task from being saved:</h2>
@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :予定名 %><br>
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :登録 %>
   </div>
 <% end %>
