@@ -1,8 +1,4 @@
 source 'http://rubygems.org'
-<<<<<<< HEAD
-=======
-
->>>>>>> 4f7daa7349cb0f20b041264302a174e56835c5cc
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
