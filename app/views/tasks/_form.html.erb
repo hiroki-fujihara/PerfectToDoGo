@@ -16,30 +16,34 @@
     <%= f.text_field :name %>
   </div>
 <br>
-<br>
   <div class="field">
     <%= f.label :詳細内容 %>
     <%= f.text_area :content, :size => "60x10" %>
   </div>
 <br>
-<br>
   <div class="field">
     <%= f.label :〆切 %>
-    <%= f.date_select :day %>
-  </div>
-<br>
+    <%= f.text_field :day, :class => 'datepicker' %>
+    <font color="red">※連続で作成する場合は更新ボタンを押してください</font>
+   </div>
 <br>
   <div class="field">
     <%= f.label :重要度 %>
-    <%= f.number_field :important %>
+<label><%= f.radio_button :important, "1", {:checked=>true} %>1</label>
+  <label><%= f.radio_button :important, "2" %>2</label>
+  <label><%= f.radio_button :important, "3" %>3</label>
+  <label><%= f.radio_button :important, "4" %>4</label>
+  <label><%= f.radio_button :important, "5" %>5</label>
   </div>
-<br>
 <br>
   <div class="field">
-    <%= f.label :指定日 %>
-    <%= f.text_field :s_date %>
+    <%= f.label :繰り返し %>
+  <label><%= f.radio_button :s_date, "なし", {:checked=>true} %>なし</label>
+  <label><%= f.radio_button :s_date, "毎日" %>毎日</label>
+  <label><%= f.radio_button :s_date, "毎週" %>毎週</label>
+  <label><%= f.radio_button :s_date, "毎月" %>毎月</label>
+  <label><%= f.radio_button :s_date, "毎年" %>毎年</label>
   </div>
-<br>
 <br>
   <div class="field">
     <%= f.label :添付ファイル %>
