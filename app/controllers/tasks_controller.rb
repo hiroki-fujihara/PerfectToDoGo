@@ -51,6 +51,11 @@ class TasksController < ApplicationController
     end
   end
 
+  def search
+    @tasks = Task.where(day: 11ŒŽ7“ú)
+    render :index
+  end
+
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
@@ -66,12 +71,6 @@ class TasksController < ApplicationController
     def set_task
       @task = Task.find(params[:id])
     end
-
-   def search
-   @search_value = params["search"]["taskname"]
-   @taskss = Task.where("taskname LIKE '%#{@search_value}%'")
-   render :index
-  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
