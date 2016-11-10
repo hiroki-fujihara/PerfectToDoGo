@@ -51,10 +51,6 @@ class TasksController < ApplicationController
     end
   end
 
-  def search
-    @tasks = Task.where(day: 11ŒŽ7“ú)
-    render :index
-  end
 
   # DELETE /tasks/1
   # DELETE /tasks/1.json
