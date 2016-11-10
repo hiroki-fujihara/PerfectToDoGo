@@ -1,8 +1,9 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<div align = left>
-<h1>今日の予定</h1>                   
+<p id="notice"><%= notice %></p>
 
+<div align = "left">                                   
+<h1>今日の予定</h1>                                      
 <table border="5" align="left">
  <thead>
   <tr>
@@ -14,19 +15,20 @@
    <th>添付ファイル</th>
   </tr>
  </thead>
+
  <tbody>
   <% @tasks.each do |task| %>
   <tr>
-   <td>
-   <% if (task.day) - (Date.today) <= 0 %>
-    <font color="red"><%= task.s_date %></font>
-   <% else %>
-    <font color="black"><%= task.s_date %></font>
-   <% end %>
-   </td>
+  
   <td><%= task.name %></td>
   <td><%= task.content %></td>
-  <td><%= task.day %></td>
+  <td>
+   <% if (task.day) - (Date.today) <= 0 %>
+    <font color="red"><%= task.day %></font>
+   <% else %>
+    <font color="black"><%= task.day %></font>
+   <% end %>
+   </td>
   <td><%= task.important %></td>
   <td><%= task.s_date %></td>
   <td><%= task.file %></td>
@@ -39,8 +41,8 @@
  </tbody>
 </table>
 
-
-
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -57,6 +59,7 @@
    <th>添付ファイル</th>
   </tr>
  </thead>
+
  <tbody>
   <% @tasks.each do |task| %>
   <tr>
@@ -75,3 +78,25 @@
  <% end %>
  </tbody>
 </table>
+
+<a href="http://localhost:3000/tasks/new">
+ <%= image_tag 'aaa.png' %>
+  </a>
+
+<div align = left>
+<a href="http://localhost:3000/fin_tasks">
+ <%= image_tag 'btn053_05.png' %>
+ </div>
+</a>
+
+<div align = center>
+<a href="">
+ <%= image_tag 'btn048_12.png' %>
+ </div>
+</a>
+
+<div align = center>
+<a href="http://localhost:3000/often_tasks">
+ <%= image_tag 'btn046_04.gif' %>
+ </div>
+</a>

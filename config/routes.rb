@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   post 'login/auth'
 
   resources :tasks
+
+  resources :tasks do
+  get 'search' , on: :collection
   resources :chatlogs
   resources :group_tasks
   resources :groups
@@ -11,10 +14,6 @@ Rails.application.routes.draw do
   resources :users
   resources :fin_tasks
   resources :often_tasks
-
- resources :tasks do
-   post 'search' , on: :collection
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -70,4 +69,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
 end
