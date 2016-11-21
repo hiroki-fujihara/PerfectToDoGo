@@ -1,9 +1,10 @@
-class LoginController < ApplicationController
+ï»¿class LoginController < ApplicationController
   skip_before_action :check_logined
 
   layout false
 
   def index
+  session[:usrname] = nil
   session[:usr] = nil
   end
 
@@ -12,10 +13,11 @@ class LoginController < ApplicationController
     if usr then
       reset_session
       session[:usr] = usr.id
+      session[:usrname] = usr.user_name
       redirect_to params[:referer]
     else
       flash.now[:referer] = params[:referer]
-      @error = 'ƒ†[ƒU[ID/ƒ[ƒ‹ƒAƒhƒŒƒX‚ªŠÔˆá‚Á‚Ä‚¢‚Ü‚·B'
+      @error = 'ãƒ¦ãƒ¼ã‚¶ãƒ¼ID/ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ãŒé–“é•ã£ã¦ã„ã¾ã™ã€‚'
       render 'index'
     end
   end

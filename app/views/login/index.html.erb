@@ -1,16 +1,14 @@
-<h1>Login#index</h1>
-<p>Find me in app/views/login/index.html.erb</p>
-<p style="color : Red"><%= @error %></p>
+ï»¿<p style="color : Red"><%= @error %></p>
 <%= form_tag action: :auth do %>
-  <div class="field">
-    <%= label_tag :user_name, 'ƒ†[ƒU[ID' %>:<br />
-    <%= text_field_tag :user_name, '' %>
-  </div>
-  <div class="field">
-    <%= label_tag :mailadd, 'ƒ[ƒ‹ƒAƒhƒŒƒX' %>:<br />
-    <%= text_field_tag :mailadd, '' %>
-  </div>
-  <%= hidden_field_tag :referer, flash[:referer] %>
-  <%= submit_tag 'ƒƒOƒCƒ“' %>
+    <div class="field">
+        <%= label_tag :user_name, 'ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒãƒ¼ãƒ ' %>:<br />
+        <%= text_field_tag :user_name, '' %>
+    </div>
+    <div class="field">
+        <%= label_tag :mailadd, 'ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹' %>:<br />
+        <%= text_field_tag :mailadd, '' %>
+    </div>
+    <%= hidden_field_tag :referer, flash[:referer] %>
+    <%= submit_tag 'ãƒ­ã‚°ã‚¤ãƒ³' %>
 <% end %>
-<%= link_to 'V‹K“o˜^', users_path %>
+<%= link_to 'æ–°è¦ãƒ¦ãƒ¼ã‚¶ãƒ¼ç™»éŒ²', "http://localhost:3000/users/new" %>

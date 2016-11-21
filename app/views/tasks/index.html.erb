@@ -23,7 +23,7 @@
   <td><%= task.name %></td>
   <td><%= task.content %></td>
   <td>
-   <% if (task.day) - (Date.today) <= 0 %>
+   <% if (task.day) == (Date.today) %>
     <font color="red"><%= task.day %></font>
    <% else %>
     <font color="black"><%= task.day %></font>

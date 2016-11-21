@@ -1,17 +1,15 @@
 Rails.application.routes.draw do
   get 'login/index'
-
+  get 'login/user'
+  get 'user/new'
   post 'login/auth'
 
   resources :tasks
-
-  resources :tasks do
-  get 'search' , on: :collection
   resources :chatlogs
   resources :group_tasks
   resources :groups
   resources :user_groups
-  resources :users
+  resources :users 
   resources :fin_tasks
   resources :often_tasks
 
@@ -69,5 +67,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
 end

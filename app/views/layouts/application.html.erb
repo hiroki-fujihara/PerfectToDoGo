@@ -7,6 +7,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 <%= image_tag 'ph.png' %><font size="8" color="blue">PerfectToDoGo!!</font><br>
+<div align = "right">
+   <%= "ログインユーザー:#{session[:usrname]}|" %>
+   <%= link_to "ログアウト",login_index_path %>
+</div>
+
 </head>
 <body style="background-color: gold">
 
