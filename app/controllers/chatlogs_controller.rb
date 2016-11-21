@@ -5,6 +5,7 @@ class ChatlogsController < ApplicationController
   # GET /chatlogs.json
   def index
     @chatlogs = Chatlog.all
+    @chatlog = Chatlog.new
   end
 
   # GET /chatlogs/1
@@ -29,7 +30,7 @@ class ChatlogsController < ApplicationController
     respond_to do |format|
       if @chatlog.save
         format.html { redirect_to @chatlog, notice: 'Chatlog was successfully created.' }
-        format.json { render :show, status: :created, location: @chatlog }
+        format.json { render :index, status: :created, location: @chatlog }
       else
         format.html { render :new }
         format.json { render json: @chatlog.errors, status: :unprocessable_entity }

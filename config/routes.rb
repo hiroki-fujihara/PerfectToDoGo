@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :tasks do
-  get 'search' , on: :collection
-  resources :chatlogs
-  resources :group_tasks
-  resources :groups
-  resources :user_groups
-  resources :users
-  resources :fin_tasks
+  resources :tasks 
+  resources :chatlogs  
+  resources :group_tasks 
+  resources :groups 
+  resources :user_groups 
+  resources :users 
+  resources :fin_tasks 
   resources :often_tasks
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -64,5 +63,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
 end

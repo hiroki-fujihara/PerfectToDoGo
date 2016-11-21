@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
+
+<div style="position:absolute; top:180px; left:800px;">
 
 <h1>Listing Chatlogs</h1>
 
-<table>
+<table style="background-color: silver">
+   
   <thead>
     <tr>
       <th>User</th>
@@ -12,20 +15,37 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody style="background-color: white">
     <% @chatlogs.each do |chatlog| %>
       <tr>
         <td><%= chatlog.user_id %></td>
         <td><%= chatlog.content %></td>
-        <td><%= chatlog.group_id %></td>
-        <td><%= link_to 'Show', chatlog %></td>
-        <td><%= link_to 'Edit', edit_chatlog_path(chatlog) %></td>
-        <td><%= link_to 'Destroy', chatlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to '削除', chatlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr> 
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= form_for(@chatlog) do |f| %>
+  <% if @chatlog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chatlog.errors.count, "error") %> prohibited this chatlog from being saved:</h2>
 
-<%= link_to 'New Chatlog', new_chatlog_path %>
+      <ul>
+      <% @chatlog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<br><br>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content, :size => "30x20" %>
+  </div>
+  <div class="actions" align = center>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,3 +1,5 @@
+﻿
+
 <%= form_for(@chatlog) do |f| %>
   <% if @chatlog.errors.any? %>
     <div id="error_explanation">
@@ -11,19 +13,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+ 
+
+  <div class="field"> 
     <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= session[:username] %></br>
   </div>
+
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.text_area :content, :size => "30x20" %>
   </div>
-  <div class="field">
-    <%= f.label :group_id %><br>
-    <%= f.text_field :group_id %>
-  </div>
-  <div class="actions">
+  <div class="actions" align = center>
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+<%= session[:username] %></br>
