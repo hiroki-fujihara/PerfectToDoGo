@@ -1,6 +1,24 @@
-<h1>Editing User</h1>
+﻿<h1>今日だけすることを教えてください</h1>
 
-<%= render 'form' %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :今日だけすること %><br>
+    <%= f.text_field :user_name %>
+  </div>
+<% end %>
+
+
+<%= link_to '次へ', @user %> |
+<%= link_to '戻る', users_path %>
