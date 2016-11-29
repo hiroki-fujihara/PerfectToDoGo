@@ -47,11 +47,11 @@
 <br>
   <div class="field">
     <%= f.label :添付ファイル %>
-    <%= f.text_field :file %>
+    <input type="file" name="upload" />
   </div>
 <br>
 <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :追加 %>
   </div>
 <% end %>

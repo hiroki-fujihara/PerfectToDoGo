@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 <%= image_tag 'ph.png' %><font size="8" color="blue">PerfectToDoGo!!</font><br>
 <div align = "right">
    <%= "ログインユーザー:#{session[:usrname]}|" %>
@@ -13,8 +14,40 @@
 </div>
 
 </head>
-<body style="background-color: gold">
+<body style="background-color: cleam">
+<div align = center>
+<a href="http://localhost:3000/tasks">
+ <%= image_tag 'ph.png' %></a><font size="8" color="blue">PerfectToDoGo!!</font><br>
+ </div>
+<div style="position:absolute; top:80px; left:660px;">
+<a href="http://localhost:3000/tasks/new">
+ <%= image_tag 'btn057_01.png' %>
+  </div>
+  </a>
 
+<div style="position:absolute; top:80px; left:780px;">
+<a href="http://localhost:3000/fin_tasks">
+ <%= image_tag 'btn057_02.png' %>
+ </div>
+</a>
+
+<div style="position:absolute; top:80px; left:900px;">
+ <a href="">
+ <%= image_tag 'btn057_05.png' %>
+ </div>
+</a>
+
+<div style="position:absolute; top:80px; left:1020px;">
+ <a href="http://localhost:3000/often_tasks">
+ <%= image_tag 'btn057_06.png' %>
+ </div>
+</a>
+
+<div style="position:absolute; top:80px; left:1140px;">
+<a href="http://localhost:3000/chatlogs">
+ <%= image_tag 'btn057_08.png' %>
+ </div>
+</a>
 <%= yield %>
 
 </body>

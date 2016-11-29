@@ -1,10 +1,80 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+<div style="position:absolute; top:300px; left:625px;">
+<h1><font color="#ff0000">期限が切れています(早急に終わらせてください)</font></h1>
+<table border="5">
+ <thead>
+  <tr>
+   <th><font color="#ff0000">予定名</font></th>
+   <th><font color="#ff0000">詳細内容</font></th>
+   <th><font color="#ff0000">予定日</font></th>
+   <th><font color="#ff0000">重要度</font></th>
+   <th><font color="#ff0000">指定日</font></th>
+   <th><font color="#ff0000">添付ファイル</font></th>
+  </tr>
+ </thead>
 
-<div align = "left">                                   
-<h1>今日の予定</h1>                                      
-<table border="5" align="left">
+ <tbody>
+  <% @tasks.each do |task| %>
+  <tr>
+
+
+  <% if (task.day) < (Date.today) %>
+  <td>
+   <% if (task.day) - (Date.today) < 0 %>
+    <font color="red"><%= task.name %></font>
+   <% else %>
+    <font color="black"><%= task.name %></font>
+   <% end %>
+   </td>
+  <td>
+   <% if (task.day) - (Date.today) < 0 %>
+    <font color="red"><%= task.content %></font>
+   <% else %>
+    <font color="black"><%= task.content %></font>
+   <% end %>
+   </td>
+  <td>
+   <% if (task.day) - (Date.today) <= 0 %>
+    <font color="red"><%= task.day %></font>
+   <% else %>
+    <font color="black"><%= task.day %></font>
+   <% end %>
+   </td>
+  <td>
+   <% if (task.day) - (Date.today) <= 0 %>
+    <font color="red"><%= task.important %></font>
+   <% else %>
+    <font color="black"><%= task.important %></font>
+   <% end %>
+   </td>
+  <td>
+   <% if (task.day) - (Date.today) <= 0 %>
+    <font color="red"><%= task.s_date %></font>
+   <% else %>
+    <font color="black"><%= task.s_date %></font>
+   <% end %>
+   </td>
+ <td>
+   <% if (task.day) - (Date.today) <= 0 %>
+    <font color="red"><%= task.file %></font>
+   <% else %>
+    <font color="black"><%= task.file %></font>
+   <% end %>
+   </td>
+
+<td><%= link_to '詳細', task %></td>
+  <td><%= link_to '更新', edit_task_path(task) %></td>
+  <td><%= link_to '削除', task, method: :delete, data: { confirm: '本当に削除しますか' } %></td>
+
+ </tr>
+ <% end %>
+<% end %>
+ </tbody>
+</table>
+                                  
+<h1>今日の予定</h1> 
+<table border="5">                                      
  <thead>
   <tr>
    <th>予定名</th>
@@ -19,7 +89,9 @@
  <tbody>
   <% @tasks.each do |task| %>
   <tr>
-  
+
+
+  <% if (task.day) == (Date.today) %>
   <td><%= task.name %></td>
   <td><%= task.content %></td>
   <td>
@@ -35,9 +107,10 @@
 
   <td><%= link_to '詳細', task %></td>
   <td><%= link_to '更新', edit_task_path(task) %></td>
-  <td><%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to '削除', task, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
  </tr>
  <% end %>
+<% end %>
  </tbody>
 </table>
 
@@ -47,8 +120,9 @@
 <br>
 <br>
 <br>
+
 <h1>明日の予定</h1> 
-<table border="5" align="left">
+<table border="5">
  <thead>
   <tr>
    <th>予定名</th>
@@ -64,6 +138,7 @@
   <% @tasks.each do |task| %>
   <tr>
   
+  <% if (task.day) == (Date.today) + 1 %>
   <td><%= task.name %></td>
   <td><%= task.content %></td>
   <td><%= task.day %></td>
@@ -73,30 +148,9 @@
 
   <td><%= link_to '詳細', task %></td>
   <td><%= link_to '更新', edit_task_path(task) %></td>
-  <td><%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to '削除', task, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
  </tr>
  <% end %>
+<% end %>
  </tbody>
 </table>
-
-<a href="http://localhost:3000/tasks/new">
- <%= image_tag 'aaa.png' %>
-  </a>
-
-<div align = left>
-<a href="http://localhost:3000/fin_tasks">
- <%= image_tag 'btn053_05.png' %>
- </div>
-</a>
-
-<div align = center>
-<a href="">
- <%= image_tag 'btn048_12.png' %>
- </div>
-</a>
-
-<div align = center>
-<a href="http://localhost:3000/often_tasks">
- <%= image_tag 'btn046_04.gif' %>
- </div>
-</a>
