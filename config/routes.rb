@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :tasks 
+  resources :tasks do
+    get 'search', on: :collection
+  end
   resources :chatlogs  
   resources :group_tasks 
   resources :groups 

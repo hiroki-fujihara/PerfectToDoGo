@@ -1,6 +1,11 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<div style="position:absolute; top:300px; left:625px;">
+<div style="position:absolute; top:200px; left:670px;">
+<%= form_tag({:action=>"search"},{:method=>"GET"}) do %>
+<%= text_field_tag "search[name]" %>
+<%= submit_tag "検索" %>
+<%= link_to "リセット", tasks_path %>
+<% end %>
 <h1><font color="#ff0000">期限が切れています(早急に終わらせてください)</font></h1>
 <table border="5">
  <thead>
@@ -72,7 +77,11 @@
 <% end %>
  </tbody>
 </table>
-                                  
+
+<br>
+<br>
+<br>
+                              
 <h1>今日の予定</h1> 
 <table border="5">                                      
  <thead>
@@ -112,8 +121,6 @@
 <br>
 <br>
 <br>
-<br>
-<br>
 
 <h1>明日の予定</h1> 
 <table border="5">
@@ -148,3 +155,5 @@
 <% end %>
  </tbody>
 </table>
+
+
