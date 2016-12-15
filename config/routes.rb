@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  
   get 'login/index'
   get 'login/user'
   get 'user/new'
   post 'login/auth'
-
-<<<<<<< HEAD
+  
   resources :tasks do
     get 'search', on: :collection
   end
@@ -12,15 +12,8 @@ Rails.application.routes.draw do
   resources :group_tasks 
   resources :groups 
   resources :user_groups 
-=======
-  resources :tasks
-  resources :chatlogs
-  resources :group_tasks
-  resources :groups
-  resources :user_groups
->>>>>>> 4d1bc6e008ddb88a0c04e0851934dde96a10cc12
   resources :users 
-  resources :fin_tasks
+  resources :fin_tasks 
   resources :often_tasks
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -77,5 +70,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
 end

@@ -1,4 +1,4 @@
-class GroupTasksController < ApplicationController
+﻿class GroupTasksController < ApplicationController
   before_action :set_group_task, only: [:show, :edit, :update, :destroy]
 
   # GET /group_tasks
@@ -28,7 +28,7 @@ class GroupTasksController < ApplicationController
 
     respond_to do |format|
       if @group_task.save
-        format.html { redirect_to @group_task, notice: 'Group task was successfully created.' }
+        format.html { redirect_to @group_task, notice: '作成完了！' }
         format.json { render :show, status: :created, location: @group_task }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GroupTasksController < ApplicationController
   def update
     respond_to do |format|
       if @group_task.update(group_task_params)
-        format.html { redirect_to @group_task, notice: 'Group task was successfully updated.' }
+        format.html { redirect_to @group_task, notice: '編集完了！' }
         format.json { render :show, status: :ok, location: @group_task }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class GroupTasksController < ApplicationController
   def destroy
     @group_task.destroy
     respond_to do |format|
-      format.html { redirect_to group_tasks_url, notice: 'Group task was successfully destroyed.' }
+      format.html { redirect_to group_tasks_url, notice: '削除完了！' }
       format.json { head :no_content }
     end
   end

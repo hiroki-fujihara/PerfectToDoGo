@@ -18,7 +18,7 @@
         <td><%= group.name %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: '本当に削除してもいいですか？' } %></td>
       </tr>
     <% end %>
    </tbody>

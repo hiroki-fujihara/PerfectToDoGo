@@ -1,4 +1,4 @@
-class UserGroupsController < ApplicationController
+﻿class UserGroupsController < ApplicationController
   before_action :set_user_group, only: [:show, :edit, :update, :destroy]
 
   # GET /user_groups
@@ -28,7 +28,7 @@ class UserGroupsController < ApplicationController
 
     respond_to do |format|
       if @user_group.save
-        format.html { redirect_to @user_group, notice: 'User group was successfully created.' }
+        format.html { redirect_to @user_group, notice: '作成完了！' }
         format.json { render :show, status: :created, location: @user_group }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class UserGroupsController < ApplicationController
   def update
     respond_to do |format|
       if @user_group.update(user_group_params)
-        format.html { redirect_to @user_group, notice: 'User group was successfully updated.' }
+        format.html { redirect_to @user_group, notice: '編集完了！' }
         format.json { render :show, status: :ok, location: @user_group }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class UserGroupsController < ApplicationController
   def destroy
     @user_group.destroy
     respond_to do |format|
-      format.html { redirect_to user_groups_url, notice: 'User group was successfully destroyed.' }
+      format.html { redirect_to user_groups_url, notice: '削除完了！' }
       format.json { head :no_content }
     end
   end

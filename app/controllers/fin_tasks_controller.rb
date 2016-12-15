@@ -1,4 +1,4 @@
-class FinTasksController < ApplicationController
+﻿class FinTasksController < ApplicationController
   before_action :set_fin_task, only: [:show, :edit, :update, :destroy]
 
   # GET /fin_tasks
@@ -28,7 +28,7 @@ class FinTasksController < ApplicationController
 
     respond_to do |format|
       if @fin_task.save
-        format.html { redirect_to @fin_task, notice: 'Fin task was successfully created.' }
+        format.html { redirect_to @fin_task, notice: '作成完了！' }
         format.json { render :show, status: :created, location: @fin_task }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class FinTasksController < ApplicationController
   def update
     respond_to do |format|
       if @fin_task.update(fin_task_params)
-        format.html { redirect_to @fin_task, notice: 'Fin task was successfully updated.' }
+        format.html { redirect_to @fin_task, notice: '編集完了！' }
         format.json { render :show, status: :ok, location: @fin_task }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class FinTasksController < ApplicationController
   def destroy
     @fin_task.destroy
     respond_to do |format|
-      format.html { redirect_to fin_tasks_url, notice: 'Fin task was successfully destroyed.' }
+      format.html { redirect_to fin_tasks_url, notice: '削除完了！' }
       format.json { head :no_content }
     end
   end

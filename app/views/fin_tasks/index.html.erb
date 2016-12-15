@@ -50,7 +50,7 @@
         <td><%= fin_task.task_id %></td>
         <td><%= link_to '詳細', fin_task %></td>
         <td><%= link_to '更新', edit_fin_task_path(fin_task) %></td>
-        <td><%= link_to '削除', fin_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', fin_task, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
