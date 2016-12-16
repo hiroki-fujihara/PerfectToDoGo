@@ -1,14 +1,15 @@
 ﻿<p id="notice"><%= notice %></p>
 
+<div style="position:absolute; top:150px; left:900px;">
+
 <p>
-  <strong>User name:</strong>
+  <strong>ユーザーネーム:</strong>
   <%= @user.user_name %>
 </p>
 
 <p>
-  <strong>Mailadd:</strong>
+  <strong>メールアドレス</strong>
   <%= @user.mailadd %>
 </p>
 
-<%= link_to '次へ', edit_user_path(@user) %> |
 <%= link_to '戻る', tasks_path %>

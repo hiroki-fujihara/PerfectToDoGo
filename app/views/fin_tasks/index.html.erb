@@ -6,12 +6,6 @@
   </div>
   </a>
 
-<div style="position:absolute; top:100px; left:780px;">
-<a href="http://localhost:3000/fin_tasks">
- <%= image_tag 'btn057_02.png' %>
- </div>
-</a>
-
 <div style="position:absolute; top:100px; left:900px;">
  <a href="">
  <%= image_tag 'btn057_05.png' %>
@@ -50,7 +44,7 @@
         <td><%= fin_task.task_id %></td>
         <td><%= link_to '詳細', fin_task %></td>
         <td><%= link_to '更新', edit_fin_task_path(fin_task) %></td>
-        <td><%= link_to '削除', fin_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', fin_task, method: :delete, data: { confirm: '削除してもよろしいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>

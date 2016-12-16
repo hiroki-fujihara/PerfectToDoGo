@@ -1,4 +1,4 @@
-class OftenTasksController < ApplicationController
+﻿class OftenTasksController < ApplicationController
   before_action :set_often_task, only: [:show, :edit, :update, :destroy]
 
   # GET /often_tasks
@@ -28,7 +28,7 @@ class OftenTasksController < ApplicationController
 
     respond_to do |format|
       if @often_task.save
-        format.html { redirect_to @often_task, notice: 'Often task was successfully created.' }
+        format.html { redirect_to @often_task, notice: '作成完了！' }
         format.json { render :show, status: :created, location: @often_task }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class OftenTasksController < ApplicationController
   def update
     respond_to do |format|
       if @often_task.update(often_task_params)
-        format.html { redirect_to @often_task, notice: 'Often task was successfully updated.' }
+        format.html { redirect_to @often_task, notice: '編集完了！' }
         format.json { render :show, status: :ok, location: @often_task }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class OftenTasksController < ApplicationController
   def destroy
     @often_task.destroy
     respond_to do |format|
-      format.html { redirect_to often_tasks_url, notice: 'Often task was successfully destroyed.' }
+      format.html { redirect_to often_tasks_url, notice: '削除完了！' }
       format.json { head :no_content }
     end
   end

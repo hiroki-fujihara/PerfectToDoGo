@@ -1,4 +1,6 @@
-﻿<p id="notice"><%= notice %></p>
+﻿<div style="position:absolute; top:180px; left:800px;">
+
+<p id="notice"><%= notice %></p>
 
 <h1>Listing Groups</h1>
 
@@ -16,15 +18,10 @@
         <td><%= group.name %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: '本当に削除してもいいですか？' } %></td>
       </tr>
     <% end %>
    </tbody>
-   <div class="column left">
-     <h2>みんなの連絡帳</h2>
-     <textarea rows="10" cols="30"></textarea></div>
-     <button type="button">書き込む</button>
-   </div>
 </table>
 
 <br>

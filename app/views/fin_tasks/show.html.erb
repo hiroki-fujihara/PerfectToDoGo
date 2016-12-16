@@ -6,12 +6,6 @@
   </div>
   </a>
 
-<div style="position:absolute; top:100px; left:780px;">
-<a href="http://localhost:3000/fin_tasks">
- <%= image_tag 'btn057_02.png' %>
- </div>
-</a>
-
 <div style="position:absolute; top:100px; left:900px;">
  <a href="">
  <%= image_tag 'btn057_05.png' %>
@@ -30,16 +24,17 @@
  </div>
 </a>
 
+<div style="position:absolute; top:250px; left:900px;">
+
 <p>
-  <strong>Fin day:</strong>
+  <strong>終了日:</strong>
   <%= @fin_task.fin_day %>
 </p>
 
 <p>
-  <strong>Task:</strong>
+  <strong>タスク名:</strong>
   <%= @fin_task.task_id %>
 </p>
 
 <%= link_to '更新', edit_fin_task_path(@fin_task) %> |
 <%= link_to '戻る', fin_tasks_path %>
-<%= link_to 'マイページ', tasks_path %>

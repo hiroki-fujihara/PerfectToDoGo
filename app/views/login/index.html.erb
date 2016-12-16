@@ -1,5 +1,32 @@
 ﻿<p style="color : Red"><%= @error %></p>
 <%= form_tag action: :auth do %>
+
+<!DOCTYPE html>
+<html>
+<div align = center>
+<head>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+<div align = "right">
+   <%= "ログインユーザー:#{session[:usrname]}|" %>
+   <%= link_to "ログアウト",login_index_path %>
+</div>
+
+<div align = center>
+<a href="http://localhost:3000/tasks">
+ <%= image_tag 'ph.png' %></a><font size="8" color="blue">PerfectToDoGo!!</font><br>
+ </div>
+
+<%= yield %>
+</head>
+<body style="background-color: cleam">
+
+</body>
+</html>
+
     <div class="field">
         <%= label_tag :user_name, 'ユーザーネーム' %>:<br />
         <%= text_field_tag :user_name, '' %>

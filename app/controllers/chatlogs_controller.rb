@@ -1,4 +1,4 @@
-class ChatlogsController < ApplicationController
+﻿class ChatlogsController < ApplicationController
   before_action :set_chatlog, only: [:show, :edit, :update, :destroy]
 
   # GET /chatlogs
@@ -29,7 +29,7 @@ class ChatlogsController < ApplicationController
 
     respond_to do |format|
       if @chatlog.save
-        format.html { redirect_to @chatlog, notice: 'Chatlog was successfully created.' }
+        format.html { redirect_to @chatlog, notice: '作成完了！' }
         format.json { render :index, status: :created, location: @chatlog }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ChatlogsController < ApplicationController
   def update
     respond_to do |format|
       if @chatlog.update(chatlog_params)
-        format.html { redirect_to @chatlog, notice: 'Chatlog was successfully updated.' }
+        format.html { redirect_to @chatlog, notice: '編集完了！' }
         format.json { render :show, status: :ok, location: @chatlog }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ChatlogsController < ApplicationController
   def destroy
     @chatlog.destroy
     respond_to do |format|
-      format.html { redirect_to chatlogs_url, notice: 'Chatlog was successfully destroyed.' }
+      format.html { redirect_to chatlogs_url, notice: '削除完了！' }
       format.json { head :no_content }
     end
   end

@@ -6,12 +6,6 @@
   </div>
   </a>
 
-<div style="position:absolute; top:100px; left:780px;">
-<a href="http://localhost:3000/fin_tasks">
- <%= image_tag 'btn057_02.png' %>
- </div>
-</a>
-
 <div style="position:absolute; top:100px; left:900px;">
  <a href="">
  <%= image_tag 'btn057_05.png' %>
@@ -32,6 +26,15 @@
 
 <div style="position:absolute; top:180px; left:800px;">
 
+<<<<<<< HEAD
+<h1>チャットログ</h1>
+
+<table style="background-color: silver">
+   
+  <thead>
+    <tr>
+      <th>ユーザーネーム</th>
+      <th>内容</th>
 <h1>Listing Chatlogs</h1>
 <table style="background-color: silver", class="table table-striped table-hover">
    
@@ -48,9 +51,11 @@
       <tr>
         <td><%= chatlog.user_id %></td>
         <td><%= chatlog.content %></td>
+
         <% if chatlog.user_id == session[:usrname] %>
-          <td><%= link_to '削除', chatlog, method: :delete %></td>
+          <td><%= link_to '削除', chatlog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
         <% end %>
+
       </tr> 
     <% end %>
   </tbody>
@@ -81,6 +86,6 @@
     <%= f.text_area :content, :size => "30x20" %>
   </div>
   <div class="actions" align = center>
-    <%= f.submit %>
+    <%= f.submit :作成 %>
   </div>
 <% end %>

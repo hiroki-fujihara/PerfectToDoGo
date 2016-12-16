@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :予定名 %>
-    <%= f.text_field :name %>
+    <%= f.collection_select :name, OftenTask.all, :name, :name %>
   </div>
 <br>
   <div class="field">
@@ -55,3 +55,5 @@
     <%= f.submit :追加 %>
   </div>
 <% end %>
+
+
