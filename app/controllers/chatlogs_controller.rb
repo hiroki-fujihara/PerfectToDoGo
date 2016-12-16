@@ -4,7 +4,7 @@
   # GET /chatlogs
   # GET /chatlogs.json
   def index
-    @chatlogs = Chatlog.all
+    @chatlogs = Chatlog.page(params[:page]).per(15)
     @chatlog = Chatlog.new
   end
 

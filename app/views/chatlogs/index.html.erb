@@ -26,6 +26,7 @@
 
 <div style="position:absolute; top:180px; left:800px;">
 
+<<<<<<< HEAD
 <h1>チャットログ</h1>
 
 <table style="background-color: silver">
@@ -34,6 +35,13 @@
     <tr>
       <th>ユーザーネーム</th>
       <th>内容</th>
+<h1>Listing Chatlogs</h1>
+<table style="background-color: silver", class="table table-striped table-hover">
+   
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Content</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -43,11 +51,17 @@
       <tr>
         <td><%= chatlog.user_id %></td>
         <td><%= chatlog.content %></td>
-        <td><%= link_to '削除', chatlog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+
+        <% if chatlog.user_id == session[:usrname] %>
+          <td><%= link_to '削除', chatlog, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+        <% end %>
+
       </tr> 
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @chatlogs %>
 
 <%= form_for(@chatlog) do |f| %>
   <% if @chatlog.errors.any? %>
@@ -63,7 +77,10 @@
   <% end %>
 
 <br><br>
-
+  <div class="field"> 
+    <%= f.label :user_id %><br>
+    <%= f.text_area :user_id, :value => session[:usrname], :readonly => true, :style => "font-size:80%" %></br>
+  </div>
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content, :size => "30x20" %>
