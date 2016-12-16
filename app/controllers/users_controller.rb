@@ -29,7 +29,7 @@
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: '作成が完了しました！' }
+        format.html { redirect_to @user, notice: '登録ありがとうございます!!' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: '削除が完了しました!' }
+        format.html { redirect_to @user, notice: '更新が完了しました!' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: '削除が完了しました' }
       format.json { head :no_content }
     end
   end
