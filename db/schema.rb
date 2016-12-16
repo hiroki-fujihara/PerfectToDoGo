@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111002158) do
+ActiveRecord::Schema.define(version: 20161215020249) do
 
   create_table "chatlogs", force: :cascade do |t|
     t.string   "user_id"
@@ -53,6 +53,15 @@ ActiveRecord::Schema.define(version: 20161111002158) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "oneweeks", force: :cascade do |t|
+    t.date     "renge"
+    t.string   "name"
+    t.integer  "important"
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.string   "content"
@@ -62,6 +71,7 @@ ActiveRecord::Schema.define(version: 20161111002158) do
     t.string   "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "cd"
   end
 
   create_table "user_groups", force: :cascade do |t|
