@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :oneweeks
   resources :w_tasks
+  resources :oneweeks
   get 'login/index'
   get 'login/user'
   get 'user/new'
