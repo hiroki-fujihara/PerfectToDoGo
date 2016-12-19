@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :oneweeks
-  resources :w_tasks
-=======
-  
->>>>>>> 71e99ad05415eb1d297e977e9dcd4084e50c91e3
+
   get 'login/index'
   get 'login/user'
   get 'user/new'
