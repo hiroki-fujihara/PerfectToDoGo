@@ -1,0 +1,1 @@
+json.partial! "oneweeks/oneweek", oneweek: @oneweek

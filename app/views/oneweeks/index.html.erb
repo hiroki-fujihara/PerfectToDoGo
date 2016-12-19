@@ -1,0 +1,236 @@
+<p id="notice"><%= notice %></p>
+
+<div style="position:absolute; top:100px; left:660px;">
+<a href="http://localhost:3000/tasks/new">
+ <%= image_tag 'btn057_01.png' %>
+  </div>
+  </a>
+
+<div style="position:absolute; top:100px; left:780px;">
+<a href="http://localhost:3000/fin_tasks">
+ <%= image_tag 'btn057_02.png' %>
+ </div>
+</a>
+
+<div style="position:absolute; top:100px; left:900px;">
+ <a href="">
+ <%= image_tag 'btn057_05.png' %>
+ </div>
+</a>
+
+<div style="position:absolute; top:100px; left:1020px;">
+ <a href="http://localhost:3000/often_tasks">
+ <%= image_tag 'btn057_06.png' %>
+ </div>
+</a>
+
+<div style="position:absolute; top:100px; left:1140px;">
+<a href="http://localhost:3000/chatlogs">
+ <%= image_tag 'btn057_08.png' %>
+ </div>
+</a>
+
+<div style="position:absolute; top:180px; left:800px;">
+
+<h1>月曜日</h1>
+<table border="5">
+  <thead>
+    <tr>
+      <th>day</th>
+      <th>Name</th>
+      <th>Important</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oneweeks.each do |oneweek| %>
+      <tr>
+        <% if oneweek.day.wday == 1 && Date.today.day + 7 > oneweek.day.day %>
+          <td><%= oneweek.day %></td>
+          <td><%= oneweek.name %></td>
+          <td><%= oneweek.important %></td>
+          <td><%= link_to 'Show', oneweek %></td>
+          <td><%= link_to 'Edit', edit_oneweek_path(oneweek) %></td>
+          <td><%= link_to 'Destroy', oneweek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h1>火曜日</h1>
+<table border="5">
+  <thead>
+    <tr>
+      <th>day</th>
+      <th>Name</th>
+      <th>Important</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oneweeks.each do |oneweek| %>
+      <tr>
+        <% if oneweek.day.wday == 2 && Date.today.day + 7 > oneweek.day.day %>
+          <td><%= oneweek.day %></td>
+          <td><%= oneweek.name %></td>
+          <td><%= oneweek.important %></td>
+          <td><%= link_to 'Show', oneweek %></td>
+          <td><%= link_to 'Edit', edit_oneweek_path(oneweek) %></td>
+          <td><%= link_to 'Destroy', oneweek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h1>水曜日</h1>
+<table border="5">
+  <thead>
+    <tr>
+      <th>day</th>
+      <th>Name</th>
+      <th>Important</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oneweeks.each do |oneweek| %>
+      <tr>
+        <% if oneweek.day.wday == 3 && Date.today.day + 7 > oneweek.day.day %>
+          <td><%= oneweek.day %></td>
+          <td><%= oneweek.name %></td>
+          <td><%= oneweek.important %></td>
+          <td><%= link_to 'Show', oneweek %></td>
+          <td><%= link_to 'Edit', edit_oneweek_path(oneweek) %></td>
+          <td><%= link_to 'Destroy', oneweek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h1>木曜日</h1>
+<table border="5">
+  <thead>
+    <tr>
+      <th>day</th>
+      <th>Name</th>
+      <th>Important</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oneweeks.each do |oneweek| %>
+      <tr>
+        <% if oneweek.day.wday == 4 && Date.today.day + 7 > oneweek.day.day %>
+          <td><%= oneweek.day %></td>
+          <td><%= oneweek.name %></td>
+          <td><%= oneweek.important %></td>
+          <td><%= link_to 'Show', oneweek %></td>
+          <td><%= link_to 'Edit', edit_oneweek_path(oneweek) %></td>
+          <td><%= link_to 'Destroy', oneweek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h1>金曜日</h1>
+<table border="5">
+  <thead>
+    <tr>
+      <th>day</th>
+      <th>Name</th>
+      <th>Important</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oneweeks.each do |oneweek| %>
+      <tr>
+        <% if oneweek.day.wday == 5 && Date.today.day + 7 > oneweek.day.day %>
+          <td><%= oneweek.day %></td>
+          <td><%= oneweek.name %></td>
+          <td><%= oneweek.important %></td>
+          <td><%= link_to 'Show', oneweek %></td>
+          <td><%= link_to 'Edit', edit_oneweek_path(oneweek) %></td>
+          <td><%= link_to 'Destroy', oneweek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h1>土曜日</h1>
+<table border="5">
+  <thead>
+    <tr>
+      <th>day</th>
+      <th>Name</th>
+      <th>Important</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oneweeks.each do |oneweek| %>
+      <tr>
+        <% if oneweek.day.wday == 6 && Date.today.day + 7 > oneweek.day.day %>
+          <td><%= oneweek.day %></td>
+          <td><%= oneweek.name %></td>
+          <td><%= oneweek.important %></td>
+          <td><%= link_to 'Show', oneweek %></td>
+          <td><%= link_to 'Edit', edit_oneweek_path(oneweek) %></td>
+          <td><%= link_to 'Destroy', oneweek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<h1>日曜日</h1>
+<table border="5">
+  <thead>
+    <tr>
+      <th>day</th>
+      <th>Name</th>
+      <th>Important</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oneweeks.each do |oneweek| %>
+      <tr>
+        <% if oneweek.day.wday == 7 && Date.today.day + 7 > oneweek.day.day %>
+          <td><%= oneweek.day %></td>
+          <td><%= oneweek.name %></td>
+          <td><%= oneweek.important %></td>
+          <td><%= link_to 'Show', oneweek %></td>
+          <td><%= link_to 'Edit', edit_oneweek_path(oneweek) %></td>
+          <td><%= link_to 'Destroy', oneweek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>

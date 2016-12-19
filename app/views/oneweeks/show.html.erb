@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Renge:</strong>
+  <%= @oneweek.renge %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @oneweek.name %>
+</p>
+
+<p>
+  <strong>Important:</strong>
+  <%= @oneweek.important %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @oneweek.file %>
+</p>
+
+<%= link_to 'Edit', edit_oneweek_path(@oneweek) %> |
+<%= link_to 'Back', oneweeks_path %>
