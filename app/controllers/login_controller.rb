@@ -17,7 +17,7 @@
       redirect_to params[:referer]
     else
       flash.now[:referer] = params[:referer]
-      @error = 'ユーザーID/メールアドレスが間違っています。'
+      @error = 'グループ名/パスワードが間違っています。'
       render 'index'
     end
   end

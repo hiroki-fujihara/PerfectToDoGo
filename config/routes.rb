@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :photos
+  get 'g_login/index'
+
+  post 'g_login/auth'
+
   resources :oneweeks
 
   get 'login/index'

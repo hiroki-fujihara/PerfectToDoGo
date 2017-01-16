@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215020249) do
+ActiveRecord::Schema.define(version: 20170116033655) do
 
   create_table "chatlogs", force: :cascade do |t|
     t.string   "user_id"
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 20161215020249) do
     t.string   "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
   end
 
   create_table "tasks", force: :cascade do |t|

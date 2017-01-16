@@ -2,7 +2,7 @@
 
 
 <div style="position:absolute; top:300px; left:1140px;">
-<a href="http://localhost:3000/fin_tasks">
+<a href="http://localhost:3000/tasks/new">
  <%= image_tag '1.png' %>
  </div>
 </a>
@@ -34,7 +34,6 @@
    <th><font color="#ff0000">詳細内容</font></th>
    <th><font color="#ff0000">予定日</font></th>
    <th><font color="#ff0000">重要度</font></th>
-   <th><font color="#ff0000">指定日</font></th>
    <th><font color="#ff0000">添付ファイル</font></th>
   </tr>
  </thead>
@@ -84,7 +83,7 @@
    <% if (task.day) - (Date.today) <= 0 %>
     <font color="red"><%= task.file %></font>
    <% else %>
-    <font color="black"><%= task.file %></font>
+    <font color="red"><%= task.file %></font>
    <% end %>
    </td>
 
@@ -110,7 +109,6 @@
    <th>詳細内容</th>
    <th>予定日</th>
    <th>重要度</th>
-   <th>指定日</th>
    <th>添付ファイル</th>
   </tr>
  </thead>
@@ -125,7 +123,6 @@
   <td><%= task.content %></td>
   <td><%= task.day %></td>
   <td><%= task.important %></td>
-  <td><%= task.s_date %></td>
   <td><%= task.file %></td>
 
   <td><%= link_to '詳細', task %></td>
@@ -150,7 +147,6 @@
    <th>詳細内容</th>
    <th>予定日</th>
    <th>重要度</th>
-   <th>指定日</th>
    <th>添付ファイル</th>
   </tr>
  </thead>
@@ -164,7 +160,6 @@
   <td><%= task.content %></td>
   <td><%= task.day %></td>
   <td><%= task.important %></td>
-  <td><%= task.s_date %></td>
   <td><%= task.file %></td>
 
   <td><%= link_to '詳細', task %></td>

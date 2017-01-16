@@ -1,4 +1,4 @@
-<div style="position:absolute; top:180px; left:800px;">
+ï»¿<div style="position:absolute; top:180px; left:800px;">
 
 <p id="notice"><%= notice %></p>
 
@@ -30,25 +30,14 @@
 <h1>Listing User Groups</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Group</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user_groups.each do |user_group| %>
-      <tr>
-        <td><%= user_group.user_id %></td>
-        <td><%= user_group.group_id %></td>
-        <td><%= link_to 'Show', user_group %></td>
-        <td><%= link_to 'Edit', edit_user_group_path(user_group) %></td>
-        <td><%= link_to 'Destroy', user_group, method: :delete, data: { confirm: '–{“–‚Éíœ‚µ‚Ü‚·‚©H' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<%= form_for(@file) do %>
+  <div class="field">
+    <%= f.file_field :upload_file %>
+  </div>
+  <div class="actions"
+    <%= f.submit "Upload" %>
+  </div>
+<% end %>
 </table>
 
 <br>

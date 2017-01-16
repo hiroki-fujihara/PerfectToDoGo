@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @photo.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @photo.image? %>
+    <div class="thumbnail">
+      <%= image_tag @photo.image %>
+    </div>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photo_path %>
