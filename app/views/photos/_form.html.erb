@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :画像名 %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
+    <%= f.label :詳細内容 %><br>
     <%= f.text_field :content %>
   </div>
 
@@ -26,7 +26,7 @@
         <%= image_tag @photo.image %>
       </div>
     <% end %><br>
-    <%= f.label :image %><br>
+    <%= f.label :画像 %><br>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
   </div>
@@ -40,6 +40,6 @@
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :作成 %>
   </div>
   <% end %>
