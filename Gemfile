@@ -47,4 +47,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'kaminari'
+gem 'carrierwave'
 gem 'coffee-script-source', '1.8.0'
+

@@ -24,18 +24,25 @@
   # POST /user_groups
   # POST /user_groups.json
   def create
-    @user_group = UserGroup.new(user_group_params)
-
-    respond_to do |format|
-      if @user_group.save
-        format.html { redirect_to @user_group, notice: '作成完了！' }
-        format.json { render :show, status: :created, location: @user_group }
-      else
-        format.html { render :new }
-        format.json { render json: @user_group.errors, status: :unprocessable_entity }
-      end
+  upload_file = content_params[:upload_file]
+  file = {}
+  if upload_file != nil
+    file[:upload_file] = upload_file.read
+    file[:upload_file_name] = upload_file_original_filename
+  end
+  file[:password] = file_params[:password]
+  @file = File.new(file)
+  respond_to do |format|
+    if @file.save
+      format.html {redirect_to @content,notice: 'Upload success' }
+      format.json {render action: 'show', status: :created, location: @content }
+    else
+      @file = File.all
+      format.html {render action: 'index' }
+      format.json {render json: @content.errors, status: :unprocessable_entity}
     end
   end
+end
 
   # PATCH/PUT /user_groups/1
   # PATCH/PUT /user_groups/1.json

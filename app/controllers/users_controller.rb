@@ -4,11 +4,12 @@
 
   # GET /users
   # GET /users.json
+
   def index
     @users = User.all
   end
 
-  # GET /users/1
+  # GET /users/
   # GET /users/1.json
   def show
   end
@@ -61,15 +62,21 @@
       format.json { head :no_content }
     end
   end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:user_name, :mailadd)
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:user_name, :mailadd)
+  end
+  def auth
+    name = 'migi'
+    passwd = 'hidari'
+     authenticate_or_request_with_http_basic('ユーザー一覧') do |n,p|
+      n == name && p == passwd
     end
+  end
 end

@@ -20,4 +20,20 @@ class ApplicationController < ActionController::Base
       redirect_to controller: :login, action: :index
     end
   end
+
+def g_check_logined
+    if session[:gro] then
+     begin
+       @gro = Group.find(session[:gro])
+     rescue ActiveRecord::RecordNotFound
+       reset_session
+     end
+    end
+
+    unless @usr
+      flash[:referer] = request.fullpath
+      redirect_to controller: :login, action: :index
+    end
+  end
+
 end
