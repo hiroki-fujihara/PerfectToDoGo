@@ -1,4 +1,4 @@
-class OneweeksController < ApplicationController
+﻿class OneweeksController < ApplicationController
   before_action :set_oneweek, only: [:show, :edit, :update, :destroy]
 
   # GET /oneweeks
@@ -51,6 +51,12 @@ class OneweeksController < ApplicationController
     end
   end
 
+  def search  
+    @name = params["search"]["name"] 
+    @oneweeks = Task.where("name like '%#{params["search"]["name"]}%'")
+    render :index  
+  end  
+
   # DELETE /oneweeks/1
   # DELETE /oneweeks/1.json
   def destroy
@@ -59,7 +65,7 @@ class OneweeksController < ApplicationController
       format.html { redirect_to oneweeks_url, notice: 'Oneweek was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
+  end   
 
   private
     # Use callbacks to share common setup or constraints between actions.
