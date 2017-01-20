@@ -1,44 +1,53 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<div style="position:absolute; top:100px; left:655px;">
+<div style="position:absolute; top:150px; left:655px;">
 <a href="http://localhost:3000/tasks/new">
  <%= image_tag 'btn057_01.png' %>
   </div>
   </a>
 
-<div style="position:absolute; top:100px; left:775px;">
+<div style="position:absolute; top:150px; left:775px;">
  <a href="http://localhost:3000/oneweeks">
  <%= image_tag 'btn057_05.png' %>
  </div>
 </a>
 
-<div style="position:absolute; top:100px; left:895px;">
+<div style="position:absolute; top:150px; left:895px;">
  <a href="http://localhost:3000/often_tasks">
  <%= image_tag 'btn057_06.png' %>
  </div>
 </a>
 
-<div style="position:absolute; top:100px; left:1015px;">
+<div style="position:absolute; top:150px; left:1015px;">
 <a href="http://localhost:3000/chatlogs">
  <%= image_tag 'btn057_08.png' %>
  </div>
 </a>
 
+<<<<<<< HEAD
 <div style="position:absolute; top:100px; left:1135px;">
 <a href="">
+=======
+<div style="position:absolute; top:150px; left:1135px;">
+<a href="http://localhost:3000/photos">
+>>>>>>> 51d3f193ae950bf33e2b7028db72e844fd7f2d17
  <%= image_tag 'btn057_03.png' %>
  </div>
-</a> 
+</a>
 
-<div style="position:absolute; top:200px; left:760px;">
+<div style="position:absolute; top:240px; left:800px;">
 
 <%= form_tag({:action => "search"},{:method => "GET"}) do %> 
   <%= text_field_tag "search[name]",@name %>
-  
   <%= submit_tag "検索" %>
   <%= link_to "リセット", oneweeks_path%>
 <% end %>
+<<<<<<< HEAD
 <div style="position:absolute; top:180px; left:760px;">
+=======
+
+<div style="position:absolute; top:50px; left:0px;">
+>>>>>>> 51d3f193ae950bf33e2b7028db72e844fd7f2d17
 
 <h1>月曜日</h1>
 <table border="5">

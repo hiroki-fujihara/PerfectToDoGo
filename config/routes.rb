@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :photos
+<<<<<<< HEAD
   get 'g_login/index'
 
   post 'g_login/auth'
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   resources :oneweeks
 
   resources :oneweeks
+=======
+>>>>>>> 51d3f193ae950bf33e2b7028db72e844fd7f2d17
   resources :w_tasks
   get 'login/index'
   get 'login/user'
