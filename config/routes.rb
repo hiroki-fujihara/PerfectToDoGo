@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :oneweeks do
     get 'search', on: :collection
   end
-  resources :tasks
+  resources :tasks 
   resources :chatlogs  
   resources :group_tasks 
   resources :groups 
